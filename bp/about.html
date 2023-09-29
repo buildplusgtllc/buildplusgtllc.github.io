@@ -30,13 +30,29 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <script>
+        var isNS = (navigator.appName == "PN") ? 1 : 0;
+        if(navigator.appName == "PN") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);
+        function mischandler(){
+        return false;
+        }
+        function mousehandler(e){
+        var myevent = (isNS) ? e : event;
+        var eventbutton = (isNS) ? myevent.which : myevent.button;
+        if((eventbutton==2)||(eventbutton==3)) return false;
+        }
+        document.oncontextmenu = mischandler;
+        document.onmousedown = mousehandler;
+        document.onmouseup = mousehandler;
+        </script>
 </head>
 
 <body>
     <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border position-relative text-primary" style="width: 6rem; height: 6rem;" role="status"></div>
-        <i class="fa fa-laptop-code fa-2x text-primary position-absolute top-50 start-50 translate-middle"></i>
+        <i class="fa fa-spinner fa-2x text-primary position-absolute top-50 start-50 translate-middle"></i>
     </div>
     <!-- Spinner End -->
 
@@ -46,10 +62,10 @@
         <div class="row gx-0 align-items-center d-none d-lg-flex">
             <div class="col-lg-6 px-5 text-start">
                 <ol class="breadcrumb mb-0">
-                    <li class="breadcrumb-item"><a class="small text-secondary" href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a class="small text-secondary" href="#">Career</a></li>
-                    <li class="breadcrumb-item"><a class="small text-secondary" href="#">Terms</a></li>
-                    <li class="breadcrumb-item"><a class="small text-secondary" href="#">Privacy</a></li>
+                    <li class="breadcrumb-item"><a class="small text-secondary" href="">Home</a></li>
+                    <li class="breadcrumb-item"><a class="small text-secondary" href="../jobs/">Career</a></li>
+                    <li class="breadcrumb-item"><a class="small text-secondary" href="">Terms</a></li>
+                    <li class="breadcrumb-item"><a class="small text-secondary" href="">Privacy</a></li>
                 </ol>
             </div>
             <div class="col-lg-6 px-5 text-end">
@@ -128,14 +144,14 @@
             <div class="navbar-nav me-auto p-3 p-lg-0">
                 <a href="index.html" class="nav-item nav-link">Home</a>
                 <a href="about.html" class="nav-item nav-link active">About Us</a>
-                <a href="service.html" class="nav-item nav-link">Services</a>
-                <a href="project.html" class="nav-item nav-link">Projects</a>
+                <a href="service.html" class="nav-item nav-link">Top Products</a>
+                <a href="project.html" class="nav-item nav-link">Products</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">More</a>
                     <div class="dropdown-menu border-0 rounded-0 rounded-bottom m-0">
                         <a href="feature.html" class="dropdown-item">Features</a>
-                        <a href="team.html" class="dropdown-item">Our Team</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                        <a href="team.html" class="dropdown-item">Brands</a>
+                        <a href="testimonial.html" class="dropdown-item">Top Sellers</a>
                         <a href="404.html" class="dropdown-item">404 Page</a>
                     </div>
                 </div>
@@ -171,28 +187,28 @@
                     <div class="fact-item bg-light rounded text-center h-100 p-5">
                         <i class="fa fa-certificate fa-4x text-primary mb-4"></i>
                         <h5 class="mb-3">Years Experience</h5>
-                        <h1 class="display-5 mb-0" data-toggle="counter-up">1234</h1>
+                        <h1 class="display-5 mb-0" data-toggle="counter-up">10</h1>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="fact-item bg-light rounded text-center h-100 p-5">
                         <i class="fa fa-users-cog fa-4x text-primary mb-4"></i>
                         <h5 class="mb-3">Team Members</h5>
-                        <h1 class="display-5 mb-0" data-toggle="counter-up">1234</h1>
+                        <h1 class="display-5 mb-0" data-toggle="counter-up">12</h1>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="fact-item bg-light rounded text-center h-100 p-5">
                         <i class="fa fa-users fa-4x text-primary mb-4"></i>
                         <h5 class="mb-3">Satisfied Clients</h5>
-                        <h1 class="display-5 mb-0" data-toggle="counter-up">1234</h1>
+                        <h1 class="display-5 mb-0" data-toggle="counter-up">100</h1>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="fact-item bg-light rounded text-center h-100 p-5">
                         <i class="fa fa-check fa-4x text-primary mb-4"></i>
                         <h5 class="mb-3">Projects Done</h5>
-                        <h1 class="display-5 mb-0" data-toggle="counter-up">1234</h1>
+                        <h1 class="display-5 mb-0" data-toggle="counter-up">100</h1>
                     </div>
                 </div>
             </div>
@@ -207,22 +223,16 @@
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="img-border">
-                        <img class="img-fluid" src="img/about.jpg" alt="">
+                        <img class="img-fluid" src="img/Products/about/about-bp.png" alt="">
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="h-100">
                         <h6 class="section-title bg-white text-start text-primary pe-3">About Us</h6>
-                        <h1 class="display-6 mb-4">#1 Digital Solution With <span class="text-primary">10 Years</span> Of Experience</h1>
-                        <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
-                        <p class="mb-4">Stet no et lorem dolor et diam, amet duo ut dolore vero eos. No stet est diam rebum amet diam ipsum. Clita clita labore, dolor duo nonumy clita sit at, sed sit sanctus dolor eos.</p>
-                        <div class="d-flex align-items-center mb-4 pb-2">
-                            <img class="flex-shrink-0 rounded-circle" src="img/team-1.jpg" alt="" style="width: 50px; height: 50px;">
-                            <div class="ps-4">
-                                <h6>Jhon Doe</h6>
-                                <small>SEO & Founder</small>
-                            </div>
-                        </div>
+                        <h1 class="display-6 mb-4"><span class="text-primary">BUILD PLUS GENERAL TRADING LLC</span></h1>
+                        <p>BUILD PLUS GENERAL TRADING LLC is a reputed organization with high credentials. We provide a wide range of services & materials. We have happy customers who are the building blocks of our organisation. Whether you are a company or an individual — you need industrial/house related items or services.</p>
+                        <p class="mb-4">Let us help you to get the best solution. From pre-production planning all the way through to release, we will translate your thoughts and visions into a concrete expression that can be shared with the world.</p>
+                        
                         <a class="btn btn-primary rounded-pill py-3 px-5" href="">Read More</a>
                     </div>
                 </div>
@@ -240,12 +250,23 @@
                     <div class="h-100">
                         <h6 class="section-title bg-white text-start text-primary pe-3">Why Choose Us</h6>
                         <h1 class="display-6 mb-4">Why People Trust Us? Learn About Us!</h1>
-                        <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                        <p class="mb-4">We have building materials, Power Tools/ Hand Tools, HAVC, Plumbing, Electrical Equipments, A/C Accessories. We are involved in trading of various materials for Oil and Gas, Marine, Civil Construction, Hotel, Petrochemical, Power, Electromechanical and Other Industries from reputed manufacturers.</p>
                         <div class="row g-4">
                             <div class="col-12">
                                 <div class="skill">
                                     <div class="d-flex justify-content-between">
-                                        <p class="mb-2">Digital Marketing</p>
+                                        <p class="mb-2">AC and AC spare parts trading</p>
+                                        <p class="mb-2">95%</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="skill">
+                                    <div class="d-flex justify-content-between">
+                                        <p class="mb-2">General Trading</p>
                                         <p class="mb-2">85%</p>
                                     </div>
                                     <div class="progress">
@@ -256,22 +277,11 @@
                             <div class="col-12">
                                 <div class="skill">
                                     <div class="d-flex justify-content-between">
-                                        <p class="mb-2">SEO & Backlinks</p>
-                                        <p class="mb-2">90%</p>
+                                        <p class="mb-2">Building Materials Trading</p>
+                                        <p class="mb-2">80%</p>
                                     </div>
                                     <div class="progress">
-                                        <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="skill">
-                                    <div class="d-flex justify-content-between">
-                                        <p class="mb-2">Design & Development</p>
-                                        <p class="mb-2">95%</p>
-                                    </div>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </div>
                             </div>
@@ -280,7 +290,7 @@
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="img-border">
-                        <img class="img-fluid" src="img/feature.jpg" alt="">
+                        <img class="img-fluid" src="img/Products/about/about-bp.png" alt="">
                     </div>
                 </div>
             </div>
@@ -293,63 +303,32 @@
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h6 class="section-title bg-white text-center text-primary px-3">Our Team</h6>
-                <h1 class="display-6 mb-4">We Are A Creative Team For Your Dream Project</h1>
+                <h6 class="section-title bg-white text-center text-primary px-3">BRANDS</h6>
+                <h1 class="display-6 mb-4"></h1>
             </div>
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item text-center p-4">
-                        <img class="img-fluid border rounded-circle w-75 p-2 mb-4" src="img/team-1.jpg" alt="">
-                        <div class="team-text">
-                            <div class="team-title">
-                                <h5>Full Name</h5>
-                                <span>Designation</span>
-                            </div>
-                            <div class="team-social">
-                                <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
+                        <img class="img-fluid border rounded-circle w-75 p-2 mb-4" src="img/Products/brands/3m.jpg" alt="">
+                        
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item text-center p-4">
-                        <img class="img-fluid border rounded-circle w-75 p-2 mb-4" src="img/team-2.jpg" alt="">
-                        <div class="team-text">
-                            <div class="team-title">
-                                <h5>Full Name</h5>
-                                <span>Designation</span>
-                            </div>
-                            <div class="team-social">
-                                <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
+                        <img class="img-fluid border rounded-circle w-75 p-2 mb-4" src="img/Products/brands/kdk.jpg" alt="">
+                        
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="team-item text-center p-4">
-                        <img class="img-fluid border rounded-circle w-75 p-2 mb-4" src="img/team-3.jpg" alt="">
-                        <div class="team-text">
-                            <div class="team-title">
-                                <h5>Full Name</h5>
-                                <span>Designation</span>
-                            </div>
-                            <div class="team-social">
-                                <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
+                        <img class="img-fluid border rounded-circle w-75 p-2 mb-4" src="img/Products/brands/abb.jpg" alt="">
+                        
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Team End -->
-
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-body footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
@@ -370,32 +349,32 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-light mb-4">Quick Links</h5>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Our Services</a>
+                    <a class="btn btn-link" href="about.html">About Us</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
+                    <a class="btn btn-link" href="project.html">Products</a>
                     <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">Support</a>
+                    <a class="btn btn-link" href="contact.html">Support</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-light mb-4">Gallery</h5>
                     <div class="row g-2">
                         <div class="col-4">
-                            <img class="img-fluid rounded" src="img/project-1.jpg" alt="Image">
+                            <img class="img-fluid rounded" src="img/Products/AC/AIR DISTRIBUTION DEVICES.jpg" alt="Image">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid rounded" src="img/project-2.jpg" alt="Image">
+                            <img class="img-fluid rounded" src="img/Products/AC/ANTI VIBRATION PRODUCTS.jpg" alt="Image">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid rounded" src="img/project-3.jpg" alt="Image">
+                            <img class="img-fluid rounded" src="img/Products/AC/COPPER PRODUCTS.jpg" alt="Image">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid rounded" src="img/project-4.jpg" alt="Image">
+                            <img class="img-fluid rounded" src="img/Products/AC/DUCT ACCESSORIES.jpg" alt="Image">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid rounded" src="img/project-5.jpg" alt="Image">
+                            <img class="img-fluid rounded" src="img/Products/AC/GLUE COATING & CLOTH.jpg" alt="Image">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid rounded" src="img/project-6.jpg" alt="Image">
+                            <img class="img-fluid rounded" src="img/Products/AC/HARDWARE ITEMS.jpg" alt="Image">
                         </div>
                     </div>
                 </div>
@@ -424,7 +403,8 @@
     </div>
     <!-- Footer End -->
 
-
+    <a href="https://api.whatsapp.com/send?phone=971523195787&amp;text=" target="_blank" class="btn btn-lg btn-primary btn-lg-square rounded-circle whatsapp"><i class="bi bi-whatsapp"></i></a>
+    <a href="tel:+971523195787" class="btn btn-lg btn-primary btn-lg-square rounded-circle call"><i class="bi bi-telephone"></i></a>
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
 
